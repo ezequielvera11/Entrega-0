@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Registro</title>
+  <link href="css/styles-register.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <form id="formulario" class="container">
+      <div>
+        <div>
+            <img src="img/emercado2.png">
+            <p>Regístrate aquí</p>
+          <div>
+            <div class="divInput">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            </div>
+
+            <div class="divInput">
+              <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+            </div>
+
+            <div class="divInput">
+              <input type="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+
+            <div class="divInput">
+              <input type="password" class="form-control" id="password1" placeholder="Contraseña" required minlength="6">
+            </div>
+
+            <div class="divInput">
+              <input type="password" class="form-control" id="password2" placeholder="Repetir contraseña" required minlength="6">
+            </div>
+
+            <div class="divInput" id="divCheckBox">
+              <input type="checkbox" id="terminos" required >
+              <label for="terminos">Acepto los términos y condiciones del servicio.</label>
+            </div>
+
+            <button type="submit" id="regBtn">Registrarme</button>
+
+
+          </div>
+        </div>
+    </form>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>
