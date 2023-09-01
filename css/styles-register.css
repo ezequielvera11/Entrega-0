@@ -1,63 +1,64 @@
 body {
-    background-color: #f8f9fa;
-    text-align: center;
-    font-family: sans-serif;
-    padding-left: 400px;
-    padding-right: 400px;
-    margin-top: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 img {
-    width: 330px;
+  height: 7.5em;
 }
 
-p {
-    font-size: 27px;
-    margin-top: 30;
+form {
+  border: 0.175em solid black;
+  border: 0.175em solid black;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.6em;
 }
 
-form{
-    background-color: #f8f9fa; 
-    padding-bottom: 28px;
-    border: 3.5px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.divInput input {
-    border-radius: 5px;
-    padding: 10px 70px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-.divInput input:focus {
-    border-color: #aad4f9; 
-    border-width: 2px;
-    outline: none;
-    text-align: center;
-}
-
-.divInput{
-    padding: 6px;
-}
-
-input::placeholder {
-    text-align: center;
-    color: rgb(127, 127, 127);
-  }
-
-#divCheckBox {
-    color: rgb(125, 125, 125);
-
+.form-floating input {
+  border-radius: 0.25em;
+  border: 0.1em solid #ccc;
+  text-align: center;
 }
 
 
-button{
-    border-radius: 5px;
-    padding: 15px 25px;
-    background-color: #aad4f9;
-    font-weight: bold;
-    margin-top: 13px;
+.form-floating {
+  padding: 0.2em;
+}
+
+.checkbox {
+  font-size: small;
+  color: #ff9807;
+}
+
+button {
+  border-radius: 0.25em;
+  padding: 0.4em 2em;
+  background-color: #ffa72c;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+#labelNameRegister {
+  margin-left: 5.4em;
+}
+
+#labelLastnameRegister {
+  margin-left: 5.4em;
+}
+
+#labelEmailRegister {
+  margin-left: 6em;
+}
+
+#labelPassword1 {
+  margin-left: 4.5em;
+}
+
+#labelPassword2 {
+  margin-left: 2.95em;
 }

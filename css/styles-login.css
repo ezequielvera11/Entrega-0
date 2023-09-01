@@ -1,53 +1,66 @@
 body {
-
-    background-color: #f8f9fa;
-    text-align: center;
-    font-family: sans-serif;
-    margin-top: 50px;
-    padding-left: 400px;
-    padding-right: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 img {
-    width: 400px;
+  height: 11em;
 }
 
-form{
-    background-color: #f8f9fa; 
-    padding-bottom: 40px;
-    border: 3.5px solid black;
+form {
+  border: 0.175em solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
-    font-size: small;
+  font-size: medium;
+  color: #ffaa33;
 }
 
-.divInput input {
-    border-radius: 5px;
-    padding: 12px 70px;
-    border: 1px solid #ccc;
+a:hover {
+  color: black;
 }
 
-.divInput input:focus {
-    border-color: #aad4f9; 
-    border-width: 2px;
-    outline: none;
-    text-align: center;
+.form-floating input {
+  border-radius: 0.25em;
+  border: 0.1em solid #ccc;
+  text-align: center;
 }
 
-.divInput{
-    padding: 10px;
+.form-floating input:focus {
+  outline: none;
+  text-align: center;
+}
+
+.form-floating {
+  margin-top: 0.5em;
+  padding: 0.3em;
+}
+
+#labelEmail {
+  margin-left: 0.95em;
+}
+
+#labelPasword {
+  margin-left: 2.2em;
 }
 
 input::placeholder {
-    text-align: center;
-    color: rgb(127, 127, 127);
-  }
+  text-align: center;
+  font-size: large;
+  color: rgb(154, 154, 154);
+}
 
-
-button{
-    border-radius: 5px;
-    padding: 15px 25px;
-    background-color: #aad4f9;
-    font-weight: bold;
+button {
+  border-radius: 0.25em;
+  padding: 1em 2em;
+  background-color: #ffa72c;
+  font-weight: bold;
+  margin-bottom: 2em;
 }

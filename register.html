@@ -4,47 +4,54 @@
 <head>
   <meta charset="utf-8">
   <title>Registro</title>
-  <link href="css/styles-register.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles-register.css" rel="stylesheet" />
 </head>
 
 <body>
 
-  <form id="formulario" class="container">
-      <div>
-        <div>
-            <img src="img/emercado2.png">
-            <p>Regístrate aquí</p>
-          <div>
-            <div class="divInput">
+  <form id="formulario">
+        
+            <img src="img/login.png">
+            <h2 style="font-size: x-large;">Regístrate aquí</h2>
+
+          <div class="divInput">
+
+            <div class="form-floating">
               <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+              <label id="labelNameRegister" for="nombre">Nombre</label>
             </div>
 
-            <div class="divInput">
+            <div class="form-floating">
               <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+              <label id="labelLastnameRegister" for="apellido">Apellido</label>
             </div>
 
-            <div class="divInput">
+            <div class="form-floating">
               <input type="email" class="form-control" id="email" placeholder="Email" required>
+              <label id="labelEmailRegister" for="email">Email</label>
             </div>
 
-            <div class="divInput">
+            <div class="form-floating">
               <input type="password" class="form-control" id="password1" placeholder="Contraseña" required minlength="6">
+              <label id="labelPassword1" for="password1">Contraseña</label>
             </div>
 
-            <div class="divInput">
+            <div class="form-floating">
               <input type="password" class="form-control" id="password2" placeholder="Repetir contraseña" required minlength="6">
+              <label id="labelPassword2" for="password2">Repetir contraseña</label>
             </div>
 
-            <div class="divInput" id="divCheckBox">
+            <div class="checkbox">
               <input type="checkbox" id="terminos" required >
               <label for="terminos">Acepto los términos y condiciones del servicio.</label>
             </div>
 
-            <button type="submit" id="regBtn">Registrarme</button>
+            <button type="submit" id="regBtn" class="checkBtn">Registrarme</button>
 
 
           </div>
-        </div>
     </form>
 
     <script src="js/register.js"></script>
