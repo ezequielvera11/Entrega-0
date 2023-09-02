@@ -24,17 +24,7 @@ function updateTotalCosts(){
     totalCostHTML.innerHTML = totalCostToShow;
 }
 //Agrega el correo en el nav
-document.addEventListener("DOMContentLoaded", function(){
-    if (!localStorage.getItem("estaLogeado")){
-        window.location.href="login.html"
-    };
-    
-    //En caso de que haya un correo ingresado, se cambia el texto de "Iniciar Sesion" a el valor del correo.
-    const mostrarLogin = document.getElementById('login');
-    if(localStorage.getItem('correo')){
-        mostrarLogin.innerText = localStorage.getItem('correo');
-    }
-});
+correoNav();
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
