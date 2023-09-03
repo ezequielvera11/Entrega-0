@@ -48,15 +48,10 @@ const searchProducts = (array) => {
   if (navbar.value == "") {
     return array;
   } else {
-    return array.filter((product) =>
-      product.name
-        .toLowerCase()
-        .includes(
-          navbar.value.toLowerCase() ||
-            product.description
-              .toLowerCase()
-              .includes(navbar.value.toLowerCase())
-        )
+    return array.filter(
+      (product) =>
+        product.name.toLowerCase().includes(navbar.value.toLowerCase()) ||
+        product.description.toLowerCase().includes(navbar.value.toLowerCase())
     );
   }
 };
