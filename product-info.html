@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -31,16 +32,34 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <!--Se agrega el boton de iniciar sesión-->
+            <a id="login" class="nav-link" href="login.html">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
+    <div class="container" id="product-info">
+    </div>
+    </div>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <form id="formPuntuacion">
+        <h4 id="tituloComentar">Comentar</h4>
+        <p>Tu opinión:</p>
+        <textarea id="opinionUsuario" rows="3" cols="40"></textarea>
+        <p>Tu puntuación:</p>
+        <div class="rating">
+          <i class="bi bi-star-fill star"></i>
+          <i class="bi bi-star-fill star"></i>
+          <i class="bi bi-star-fill star"></i>
+          <i class="bi bi-star-fill star"></i>
+          <i class="bi bi-star-fill star"></i>
+        </div>
+        <div class="row col-1" id="botonPuntuacion">
+          <button id="botonComentario" type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
@@ -48,7 +67,8 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <div id="spinner-wrapper">

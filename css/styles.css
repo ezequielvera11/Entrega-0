@@ -188,3 +188,57 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.comentario {
+  border: rgba(216, 207, 207, 0.822) solid 0.1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.6rem;
+  padding-top: 0.3rem;
+  line-height: 0.5em;
+}
+
+#numEstrellas {
+  padding: 0.5rem;
+  margin-left: 0.75rem;
+}
+
+#botonPuntuacion {
+  padding: 17px;
+  margin-left: -1.05rem;
+}
+
+#tituloComentarios,
+#tituloComentar {
+  margin-top: 3rem;
+}
+
+.imgProductos {
+  width: 18rem;
+  margin-top: 1.3rem;
+  margin-right: 2rem;
+}
+
+#nomProducto {
+  margin-top: 1.3rem;
+}
+
+#hrProductos {
+  margin-top: 1.8rem;
+}
+
+.star {
+  color: grey;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.rating {
+  margin-top: -1rem;
+}
+
+.star:hover,
+.star.checked {
+  color: goldenrod;
+}

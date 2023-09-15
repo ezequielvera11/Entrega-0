@@ -1,140 +1,146 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-  <head> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> 
-    <title>eMercado - Todo lo que busques está aquí</title> 
-    <link  href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" /> 
-    <link href="css/font-awesome.min.css" rel="stylesheet" /> 
-    <link href="css/bootstrap.min.css" rel="stylesheet" /> 
-    <link href="css/styles.css" rel="stylesheet" /> 
-  </head> 
- 
-  <body> 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"> 
-      <div class="container"> 
-        <button  class="navbar-toggler"  type="button" data-bs-toggle="collapse"  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" > 
-          <span class="navbar-toggler-icon"></span> 
-        </button> 
-        <div class="collapse navbar-collapse" id="navbarNav"> 
-          <ul class="navbar-nav w-100 justify-content-between"> 
-            <li class="nav-item"> 
-              <a class="nav-link" href="index.html">Inicio</a> 
-            </li> 
-            <li class="nav-item"> 
-              <a class="nav-link" href="categories.html">Categorías</a> 
-            </li> 
-            <li class="nav-item"> 
-              <a class="nav-link" href="sell.html">Vender</a> 
-            </li> 
-            <li>
-              <a id="login" class="nav-link" href="login.html">Iniciar sesión</a>
-            </li>
-            <li class="nav-item"></li> 
-          </ul> 
-        </div> 
-      </div> 
-    </nav> 
-    <!--Agregamos los botones para poder poner el filtro en el listado de productos--> 
-    <main class="pb-5 container"> 
-      <div> 
-        <center style="padding-top: 35px;"> 
-          <h1>Productos</h1> 
-            <h3>Verás aquí todos los productos de la categoría <span id="catName"></span></h3>    
-        </center>
-      </div> 
-      <div> 
-        <div class="row"> 
-          <div class="col text-end"> 
-            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons"> 
-              <input type="radio" class="btn-check" name="options" id="sortAsc"> 
-              <label class="btn btn-light" for="sortAsc"><i class="fas fa-sort-amount-up mr-1"></i>$</label> 
-              <input type="radio" class="btn-check" name="options" id="sortDesc"> 
-              <label class="btn btn-light" for="sortDesc"><i class="fas fa-sort-amount-down mr-1"></i>$</label> 
-              <input type="radio" class="btn-check" name="options" id="sortByCount" checked> 
-              <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i>Rel</label> 
-            </div> 
-          </div> 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li>
+            <a id="login" class="nav-link" href="login.html">Iniciar sesión</a>
+          </li>
+          <li class="nav-item"></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Agregamos los botones para poder poner el filtro en el listado de productos-->
+  <main class="pb-5 container">
+    <div>
+      <center style="padding-top: 3rem;">
+        <h1>Productos</h1>
+        <h3>Verás aquí todos los productos de la categoría <span id="catName"></span></h3>
+      </center>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col text-end">
+          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+            <input type="radio" class="btn-check" name="options" id="sortAsc">
+            <label class="btn btn-light" for="sortAsc"><i class="fas fa-sort-amount-up mr-1"></i>$</label>
+            <input type="radio" class="btn-check" name="options" id="sortDesc">
+            <label class="btn btn-light" for="sortDesc"><i class="fas fa-sort-amount-down mr-1"></i>$</label>
+            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
+            <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i>Rel</label>
+          </div>
         </div>
-        <div class="row"> 
-          <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container"> 
-            <div class="row container p-0 m-0"> 
-              <div class="col"> 
-                <p class="font-weight-normal text-end my-2">Precio</p> 
-              </div> 
-              <div class="col"> 
-                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin"> 
-              </div> 
-              <div class="col"> 
-                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax"> 
-              </div> 
-              <div class="col-3 p-0"> 
-                <div class="btn-group" role="group"> 
-                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button> 
-                  <button class="btn btn-light btn-block" id="clearRangeFilter">Limpiar</button> 
-                </div> 
-              </div> 
-            </div> 
-          </div> 
-        </div> 
-        <!--Insertamos una navbar de boostrap, agregamos un botón el icono search-->
-        <div class="row"> 
-          <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container"> 
-            <div class="row container p-0 m-0"> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col"></div> 
-              <div class="col-7" style="padding-top: 12px; padding-bottom: 12px;"> 
-                <input class="form-control" type="search" placeholder="Buscar productos" id="navbar">
-              </div> 
-              <div class="col p-0 text-end"> 
-                <div class="btn-group" role="group" style="padding-top: 12px; padding-bottom: 12px;"> 
-                  <button class="btn btn-light btn-block" type="button" id="search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                     </svg>
-                  </button>
-                </div> 
-              </div> 
-            </div> 
-          </div> 
-        </div> 
       </div>
-      <div class="list-group" id="cars-container">  
-        <!-- <div class="alert alert-danger text-center" role="alert"> 
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Precio</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-light btn-block" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Insertamos una navbar de boostrap, agregamos un botón el icono search-->
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col-7" style="padding-top: 12px; padding-bottom: 12px;">
+              <input class="form-control" type="search" placeholder="Buscar productos" id="navbar">
+            </div>
+            <div class="col p-0 text-end">
+              <div class="btn-group" role="group" style="padding-top: 12px; padding-bottom: 12px;">
+                <button class="btn btn-light btn-block" type="button" id="search"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-group" id="cars-container">
+      <!-- <div class="alert alert-danger text-center" role="alert"> 
         <h4 class="alert-heading">Funcionalidad en desarrollo</h4> 
-        </div> --> 
-      </div> 
-      <div class="container"> 
-      </div>
-    </main> 
- 
-    
-    <footer class="text-muted"> 
-      <div class="container"> 
-        <p class="float-end"> 
-          <a href="#">Volver arriba</a> 
-        </p> 
-        <p> 
-          Este sitio forma parte de 
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank" >Jovenes a Programar</a> 
-        </p> 
-      </div> 
-    </footer> 
-    <div id="spinner-wrapper"> 
-      <div class="lds-ring"> 
-        <div></div> 
-        <div></div> 
-        <div></div> 
-        <div></div> 
-      </div> 
-    </div> 
-    <script src="js/bootstrap.bundle.min.js"></script> 
-    <script src="js/init.js"></script> 
-    <script src="js/products.js"></script> 
-  </body> 
-</html> 
+        </div> -->
+    </div>
+    <div class="container">
+    </div>
+  </main>
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>
+        Este sitio forma parte de
+        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+</body>
+
+</html>
