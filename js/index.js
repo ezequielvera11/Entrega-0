@@ -14,3 +14,5 @@ document.addEventListener("DOMContentLoaded", function () {
     //Agrega el correo en el nav
     correoNav();
 });
+
+
