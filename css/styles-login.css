@@ -64,3 +64,15 @@ button {
   font-weight: bold;
   margin-bottom: 2em;
 }
+
+@media (max-width: 425px) {
+  .loginStyle {
+    width: 80%;
+  }
+  .imgLogin {
+    height: 7.7em;
+  }
+  .tittleLogin {
+    font-size: x-large;
+  }
+}

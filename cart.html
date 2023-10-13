@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
@@ -18,7 +15,9 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="d-none d-lg-block d-md-none d-sm-none">
       <a href="index.html"><img id="logo_index" src="img/logo/2.png" alt="Descripción de la imagen"></a>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
@@ -31,38 +30,76 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <!--Se agrega el boton de iniciar sesión-->
+            <a id="login" class="nav-link" href="login.html">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    
+    <main>
+      <div class="container d-flex flex-column">
+        <center><h2 class="mt-4">Carrito de compras</h2></center>
+        <p class="mt-3 text-center lead">Artículos a comprar</p>
+        <table id="products-container" class="text-center">
+          <tr>
+            <th class="d-lg-table-cell d-md-none d-sm-none d-none"></th>
+            <th>Nombre</th>
+            <th class="d-lg-table-cell d-md-none d-sm-none d-none">Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+          <hr>
+        </table>
+         <form>
+        <h4 class="mt-4">Tipo de envío</h4>
+        <div>
+          <input type="radio" id="envioPremium" name="envio" value="premium"/>
+          <label for="envioPremium">Premium 2 a 5 dias (15%)</label>
+          <br>
+          <input type="radio" id="envioExpress" name="envio" value="express"/>
+          <label for="envioExpress">Express 5 a 8 días (7%)</label>
+          <br>
+          <input type="radio" id="envioStandard" name="envio" value="standard"/>
+          <label for="envioStandard">Standard 12 a 15 días (5%)</label>
+        </div>
+        <h4 class="mt-4">Dirección de envío</h4>
+        <p class="mb-0">Calle:</p>
+        <input type="text" id="calleBox">
+        <p class="mb-0">Número:</p>
+        <input type="text" id="numeroBox">
+        <p class="mb-0">Esquina:</p>
+        <input type="text" id="esquinaBox">
+        <br>
+        <button class="btn btn-outline-warning text-secondary mt-3">Comprar</button>
+      </form>
+      </div>
+    </main>
+    <footer id="footer" class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-  </main>
-  <footer id="footer" class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>
