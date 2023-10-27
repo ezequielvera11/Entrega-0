@@ -43,37 +43,123 @@
       <div class="container d-flex flex-column">
         <center><h2 class="mt-4">Carrito de compras</h2></center>
         <p class="mt-3 text-center lead">Artículos a comprar</p>
-        <table id="products-container" class="text-center">
+        <div id="alertaFormulario"></div>
+        <form class="needs-validation" id="formCarrito" novalidate>
+        <table id="products-container" class="text-center col-12 tablaProductos">
           <tr>
             <th class="d-lg-table-cell d-md-none d-sm-none d-none"></th>
             <th>Nombre</th>
             <th class="d-lg-table-cell d-md-none d-sm-none d-none">Costo</th>
             <th>Cantidad</th>
             <th>Subtotal</th>
+            <th></th>
           </tr>
           <hr>
         </table>
-         <form>
-        <h4 class="mt-4">Tipo de envío</h4>
-        <div>
-          <input type="radio" id="envioPremium" name="envio" value="premium"/>
+        <hr>
+          <div class="mt-5">
+            <h4>Dirección de envío</h4>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="calleBox">Calle:</label>
+                        <input type="text" class="form-control" id="calleBox" required>
+                        <div class="invalid-feedback">Ingresa una calle</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="numeroBox">Número:</label>
+                        <input type="text" class="form-control" id="numeroBox" pattern="[0-9]+" required>
+                        <div class="invalid-feedback">Ingresa un número</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="esquinaBox">Esquina:</label>
+                <input type="text" class="form-control" id="esquinaBox" required>
+                <div class="invalid-feedback">Ingresa una esquina</div>
+            </div>
+        </div>
+                
+
+        <h4 class="mt-5">Tipo de envío</h4>
+        <div id="radios">
+          <input type="radio" id="envioPremium" name="envio" value="15" required/>
           <label for="envioPremium">Premium 2 a 5 dias (15%)</label>
           <br>
-          <input type="radio" id="envioExpress" name="envio" value="express"/>
+          <input type="radio" id="envioExpress" name="envio" value="7" required/>
           <label for="envioExpress">Express 5 a 8 días (7%)</label>
           <br>
-          <input type="radio" id="envioStandard" name="envio" value="standard"/>
+          <input type="radio" id="envioStandard" name="envio" value="5" required/>
           <label for="envioStandard">Standard 12 a 15 días (5%)</label>
+          <div class="invalid-feedback">Selecciona un tipo de envio</div>
         </div>
-        <h4 class="mt-4">Dirección de envío</h4>
-        <p class="mb-0">Calle:</p>
-        <input type="text" id="calleBox">
-        <p class="mb-0">Número:</p>
-        <input type="text" id="numeroBox">
-        <p class="mb-0">Esquina:</p>
-        <input type="text" id="esquinaBox">
+
+        <hr>
         <br>
-        <button class="btn btn-outline-warning text-secondary mt-3">Comprar</button>
+        <div class="mt-3" id="infoCostos">
+          <div class="shadow p-3 mb-4 bg-white rounded col">
+              <h5 class="mb-2">Subtotal</h5>
+              <p id="sub" class="font-weight-bold mb-0"></p>
+          </div>
+          <div class="shadow p-3 mb-4 bg-white rounded col">
+              <h5 class="mb-2">Costo de envío</h5>
+              <p id="costEnvio" class="font-weight-bold mb-0"></p>
+          </div>
+          <div class="shadow p-3 mb-4 bg-white rounded col">
+              <h5 class="mb-2">Total (USD)</h5>
+              <p id="pagoTotal" class="font-weight-bold mb-0"></p>
+          </div>
+      </div>
+      <h4 class="mt-4">Forma de pago</h4>
+      <p class="mb-3">Seleccionar forma de pago
+        <a href="#exampleModal" data-bs-toggle="modal">Seleccionar</a>
+      </p>
+      <div id="alertaPago">
+      </div>
+      <button type="submit" id="btnFormEnvio" class="btn btn-outline-warning text-secondary mt-3 mb-4">Comprar</button>
+      </div>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+            </div>
+            <div class="modal-body">
+              <input type="radio" id="tarjetaCredito" name="metodo" value="tarjetaCredito" onchange="disabledInput()" required/>
+              <label for="tarjetaCredito">Tarjeta de crédito</label>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <p>Número de tarjeta</p><input type="text" id="numeroTarjeta" class="form-control" pattern="[0-9]+" required>
+                  <div class="invalid-feedback"></div> 
+                </div>
+                <div class="col-6">
+                  <p>Código de seg.</p><input type="text" id="codigoSeguridad" class="form-control" pattern="[0-9]+" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="col-6 mb-4 mt-3">
+                  <p>Vencimiento (MM/AA)</p><input type="date" id="vencimiento" class="form-control" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <hr>
+              <input type="radio" id="transferenciaBancaria" name="metodo" value="transferenciaBancaria" onchange="disabledInput()" required/>
+              <label for="transferenciaBancaria">Transferencia bancaria</label>
+              <hr>
+              <div class="col-6">
+              <p>Número de cuenta</p><input type="text" id="numeroCuenta" class="form-control" pattern="[0-9]+" required>
+              <div class="invalid-feedback"></div>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       </form>
       </div>
     </main>

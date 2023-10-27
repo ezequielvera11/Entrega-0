@@ -256,6 +256,7 @@ a.custom-card:hover {
   padding-top: 0%;
   border: rgba(192, 188, 188, 0.671) solid 0.1px;
   margin: 0.313rem;
+  cursor: pointer;
 }
 
 body.dark {
@@ -395,6 +396,13 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .tablaProductos {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .buscadorProductos input{
     margin-left: 0%;
@@ -420,13 +428,25 @@ footer {
     margin-top: 1.3rem;
     margin-right: 2rem;
   }
-
 }
 .cart-img {
   height: 4rem;
 }
 
-table, th, td {
-  border: 1px solid rgb(182, 182, 182);
+table, th, td { 
   padding: 1.2rem;
+}
+th {
+  background-color: rgb(58, 54, 54);
+  color: white;
+}
+tr:hover {
+background-color: rgb(221, 204, 204);
+}
+#infoCostos {
+  display: flex;
+}
+
+body.dark #infoCostos {
+  color: #212121;
 }
