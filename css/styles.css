@@ -394,12 +394,18 @@ footer {
   footer p {
     font-size: small;
   }
+  #tituloPerfil {
+    margin-left: 5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .tablaProductos {
     width: 100%;
     font-size: 0.8rem;
+  }
+  .divBtnForm {
+    justify-content: center;
   }
 }
 

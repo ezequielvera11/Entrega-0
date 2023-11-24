@@ -46,7 +46,6 @@ function correoNav() {
   if (!localStorage.getItem("estaLogeado")) {
     window.location.href = "login.html";
   }
-
   // En caso de que haya un correo ingresado, se cambia el texto de "Iniciar Sesion" a el valor del correo.
   // (E4) Se agrega un menú desplegable.
   const mostrarLogin = document.getElementById("login");
@@ -98,17 +97,17 @@ async function loadCart() {
 }
 
 loadCart();
+correoNav();
 
 //(E4) Se llama por id al botón "cerrar sesion" del menú desplegable y al hacerle click se elminan
-//del localStorage los datos del usuario anteriormente logeado, y lurgo redirige a la pantalla de login.
+//del localStorage los datos del usuario anteriormente logeado, y luego redirige a la pantalla de login.
 
 const logOut = document.getElementById("logOut");
 
 logOut.addEventListener("click", (e) => {
-  e.preventDefault();
-
   localStorage.removeItem("estaLogeado");
   localStorage.removeItem("correo");
-
+  localStorage.removeItem("profile");
+  localStorage.removeItem("profile_picture");
   window.location.href = "login.html";
 });

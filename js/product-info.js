@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
   relatedProduct();
-  correoNav();
 
   function generateComment(user, dateTime, score, description) {
     const html = `
